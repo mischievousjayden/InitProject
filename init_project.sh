@@ -1,18 +1,18 @@
 #!/bin/sh
 
 printHelp() {
-    echo "Usage: bash $0 [nodets|reactts]"
+    echo "Usage: bash $0 [node|nodets|reactts]"
     exit 1
 }
 
-initCommon() {
-    echo "----- Init Common -----"
+initNode() {
+    echo "----- Init Node Project -----"
     mkdir -p src
     npm install --save-dev mocha chai chai-http
 }
 
-initCommonTS() {
-    echo "----- Init Common with Typescript -----"
+initTSCommon() {
+    echo "----- Init Typescript Common -----"
     npm install --save-dev typescript @types/mocha @types/chai @types/chai-http
 }
 
@@ -31,6 +31,10 @@ initReactTS() {
     wget https://raw.githubusercontent.com/mischievousjayden/InitProject/master/ReactTS/webpack.config.js
     wget https://raw.githubusercontent.com/mischievousjayden/InitProject/master/ReactTS/src/index.html -O src/index.html
     wget https://raw.githubusercontent.com/mischievousjayden/InitProject/master/ReactTS/src/index.tsx -O src/index.tsx
+    echo "Add following on scripts in package.json ..."
+    echo '"start": "webpack-dev-server"'
+    echo '"build": "webpack"'
+    echo '"clean": "rm -rf dist"'
 }
 
 if [ $# -ne 1 ]
@@ -39,13 +43,15 @@ then
 fi
 
 case $1 in
-    tsnode )
-        initCommon
-        initCommonTS
+    node )
+        initNode;;
+    nodets )
+        initNode
+        initTSCommon
         initNodeTS;;
-    tsreact )
-        initCommon
-        initCommonTS
+    reactts )
+        initNode
+        initTSCommon
         initReactTS;;
     * )
         printHelp $0;;
