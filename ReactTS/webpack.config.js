@@ -1,10 +1,13 @@
 // reference from https://www.typescriptlang.org/docs/handbook/react-&-webpack.html
 
+var path = require("path");
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
     entry: "./src/index.tsx",
     output: {
         filename: "bundle.js",
-        path: __dirname + "/dist"
+        path: path.resolve(__dirname, "dist"),
     },
 
     // Enable sourcemaps for debugging webpack's output.
@@ -33,5 +36,10 @@ module.exports = {
         "react": "React",
         "react-dom": "ReactDOM"
     },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: path.join(__dirname, 'src/index.html')
+        }),
+    ]
 };
 
