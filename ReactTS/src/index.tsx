@@ -1,11 +1,13 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
+import { Layout } from "./components/Layout";
+
 
 document.title = "ReactJS & Typescript Project";
 
 ReactDOM.render(
-    <div>Hello ReactJS & Typescript Project</div>,
+    <Layout />,
     document.getElementById("app")
 );
 
