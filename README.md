@@ -2,12 +2,15 @@
 The repository is bash scripts and configuration files to help initialize projects
 
 ## How to use
-### Node Project
-curl https://raw.githubusercontent.com/mischievousjayden/InitProject/master/init_project.sh | sh /dev/stdin node
+### NodeJS Project
+curl https://raw.githubusercontent.com/mischievousjayden/InitProject/master/init_project.sh | sh /dev/stdin nodejs
 
-### Node Project with Typescript
+### ReactJS Project
+curl https://raw.githubusercontent.com/mischievousjayden/InitProject/master/init_project.sh | sh /dev/stdin reactjs
+
+### NodeJS Project with Typescript
 curl https://raw.githubusercontent.com/mischievousjayden/InitProject/master/init_project.sh | sh /dev/stdin nodets
 
-### React Project with Typescript
+### ReactJS Project with Typescript
 curl https://raw.githubusercontent.com/mischievousjayden/InitProject/master/init_project.sh | sh /dev/stdin reactts
 

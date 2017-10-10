@@ -48,6 +48,7 @@ initReactTS() {
 
     mkdir -p src/components
 
+    npm install --save-dev typescript @types/node
     npm install --save react react-dom
     npm install --save-dev @types/react @types/react-dom
     npm install --save-dev webpack webpack-dev-server html-webpack-plugin
@@ -82,7 +83,7 @@ case $1 in
         initTSUnitTest;;
     reactts )
         initJSUnitTest
-        initTSCommon
+        # initTSCommon
         initTSUnitTest
         initReactTS;;
     * )
